@@ -1,0 +1,27 @@
+- jesteś w zamkniętym pomieszczeniu o wymiarach 6 x 8, każda komórka to kwadrat
+- twoim celem jest dotarcie do komputera, omijając przeszkody
+- aby lepiej zobrazować, gdzie jest punkt startowy, meta oraz wszystkie przeszkody, posłuż się współrzędnymi jak w Excelu w taki sposób:
+ * wiersze to liczba (pierwszy wiersz 1)
+ * kolumny to litera (pierwsza kolumna A)
+ * lewy górny róg pomieszczenia to komórka A1
+ * prawy dolny róg pomieszczenia to komórka H6
+- przeszkody są w następujących polach:
+ * C2, C4, C5, E3, E4
+ * od A1 do H1
+ * od A1 do A6
+ * od A6 do H6
+ * od H1 do H6
+- start jest w punkcie:
+ * B5
+- meta jest w punkcie:
+ * G5
+- przez przeszkody nie można przechodzić, ani przeskakiwać
+- ważne! ruch odbywa się tylko o 1 pole
+- przesuwaj się po polach, które nie są przeszkodami wylistowanymi wyżej
+- ostateczną trasę zamień na ruchy LEFT, RIGHT, UP, DOWN
+- trasę wypisz w formie JSON, jak w przykładzie poniżej:
+<RESULT>
+{
+ "steps": "UP, RIGHT, DOWN, LEFT"
+}
+</RESULT>

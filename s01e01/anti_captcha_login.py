@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import json
 import os
 
-LOGIN_URL = 'http://xyz.ag3nts.org'
+LOGIN_URL = os.getenv("LOGIN_URL")
 USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 API_URL = os.getenv("API_URL")

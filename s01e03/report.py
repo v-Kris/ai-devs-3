@@ -19,7 +19,7 @@ def get_openai_answer(question):
 
         print(f"Debug: Generating answer for question: '{question}'")
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",  # Specify the model you want to use
+            model="gpt-4o-mini",  # Specify the model you want to use
             messages=[
                 {"role": "system", "content": "Please provide a single-word answer."},  # System message
                 {"role": "user", "content": question}

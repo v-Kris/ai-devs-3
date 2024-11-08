@@ -1,3 +1,4 @@
+HARD:
 - jesteś w zamkniętym pomieszczeniu o wymiarach 6 x 8, każda komórka to kwadrat
 - twoim celem jest dotarcie do komputera, omijając przeszkody
 - aby lepiej zobrazować, gdzie jest punkt startowy, meta oraz wszystkie przeszkody, posłuż się współrzędnymi jak w Excelu w taki sposób:
@@ -20,6 +21,14 @@
 - przesuwaj się po polach, które nie są przeszkodami wylistowanymi wyżej
 - ostateczną trasę zamień na ruchy LEFT, RIGHT, UP, DOWN
 - trasę wypisz w formie JSON, jak w przykładzie poniżej:
+<RESULT>
+{
+ "steps": "UP, RIGHT, DOWN, LEFT"
+}
+</RESULT>
+
+EASY:
+- replace the following arrows: ↑ ↑ → → ↓ ↓ → → → → to actual UP/RIGHT/DOWN/LEFT moves and represent it as the following:
 <RESULT>
 {
  "steps": "UP, RIGHT, DOWN, LEFT"

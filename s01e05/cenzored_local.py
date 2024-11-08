@@ -45,19 +45,24 @@ Important rules:
 - Never leave parts of names visible
 - Always include street numbers in CENZURA
 - Each sensitive piece of information should be replaced with exactly one CENZURA
+- DO NOT change any words in the original text (like changing 'ulica'/'ulicy' to 'ul.' or vice versa)
+- Keep all original formatting and words exactly as they appear, only replace sensitive data with CENZURA
 
 <examples>
-USER: Podejrzany: Adam Nowak. Mieszka w Bydgoszczy przy ul. Sezamkowej 7. Ma 34 lata.
-AI: Podejrzany: CENZURA. Mieszka w CENZURA przy ul. CENZURA. Ma CENZURA lata.
+USER: Podejrzany: Adam Nowak. Mieszka w Bydgoszczy przy ul. Sezamkowej 7. Ma 35 lat.
+AI: Podejrzany: CENZURA. Mieszka w CENZURA przy ul. CENZURA. Ma CENZURA lat.
 
-USER: Klient: Jan Kowalski. Mieszka w Warszawie przy ul. Czereśniowej 3. Ma 45 lat.
-AI: Klient: CENZURA. Mieszka w CENZURA przy ul. CENZURA. Ma CENZURA lat.
+USER: Klient: Jan Kowalski. Mieszka w Warszawie na ulicy Czereśniowej 3. Ma 44 lata.
+AI: Klient: CENZURA. Mieszka w CENZURA na ulicy CENZURA. Ma CENZURA lata.
 
-USER: Klient: Jan Kowalski. Mieszka w Warszawie przy ul. Czereśniowej 3. Wiek 43 lata.
-AI: Klient: CENZURA. Mieszka w CENZURA przy ul. CENZURA. Wiek CENZURA lata.
+USER: Klient: Jan Kowalski. Mieszka w Warszawie przy ulicy Czereśniowej 3. Ma 44 lata.
+AI: Klient: CENZURA. Mieszka w CENZURA przy ulicy CENZURA. Ma CENZURA lata.
+
+USER: Klient: Jan Kowalski. Mieszka w Warszawie, ulica Czereśniowa 3. Wiek 43 lata.
+AI: Klient: CENZURA. Mieszka w CENZURA, ulica CENZURA. Wiek CENZURA lata.
 </examples>
 
-Return only the modified text, with no additional explanations.
+Return only the modified text, with no additional explanations. Keep all original words and formatting exactly as they appear in the input text, only replace sensitive information with CENZURA.
 
 Original text: {text}"""
     

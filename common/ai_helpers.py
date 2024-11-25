@@ -45,7 +45,7 @@ def transcribe_audio(audio_file):
         print(f"Error transcribing audio file '{audio_file}': {e}")
         raise
 
-def chat_with_gpt(system_message, user_message):
+def chat_with_gpt(system_message, user_message, tools=None):
     """Chat with GPT using specified system and user messages"""
     try:
         client = OpenAI()
@@ -56,11 +56,32 @@ def chat_with_gpt(system_message, user_message):
             messages=[
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": user_message}
-            ]
+            ],
+            tools=tools
         )
         
         answer = response.choices[0].message.content.strip()
         print(f"Debug: GPT response received. Length: {len(answer)} characters")
+        return answer
+    except Exception as e:
+        print(f"Error in chat_with_gpt: {e}")
+        raise
+
+def chat_with_gpt_messages(messages, model="gpt-4o-mini", tools=None, stream=False):
+    """Chat with GPT using specified system and user messages"""
+    try:
+        client = OpenAI()
+        
+        print(f"Debug: Sending chat message to GPT")
+        response = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            tools=tools,
+            stream=stream,
+        )
+        
+        answer = response.choices[0].message
+        print(f"Debug: GPT response received: {answer}")
         return answer
     except Exception as e:
         print(f"Error in chat_with_gpt: {e}")

@@ -24,7 +24,7 @@ def send_report(answer, task_name):
         response = requests.post(url, json=payload)
         print(f"Debug: Response status code = {response.status_code}")
         print(f"Debug: Response headers = {dict(response.headers)}")
-        print(f"Debug: Response content = {response.text}")
+        # print(f"Debug: Response content = {response.text}")
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as e:
